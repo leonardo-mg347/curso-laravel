@@ -22,7 +22,7 @@ class LivroController extends Controller
      */
     public function create()
     {
-        return view('livros.create');
+        return view('livros.create', ['livro' => new Livro]);
     }
 
     /**
@@ -30,13 +30,12 @@ class LivroController extends Controller
      */
     public function store(StoreLivroRequest $request)
     {
-        dd($request->titulo);
         $livro = new Livro;
         $livro->titulo = $request->titulo;
         $livro->autor  = $request->autor;
         $livro->isbn   = $request->isbn;
         $livro->save();
-        return redirect("/livros/{$livro->id}");
+        return redirect("/livros");
     }
 
     /**
@@ -44,8 +43,7 @@ class LivroController extends Controller
      */
     public function show(Livro $livro)
     {
-        $livro = Livro::where('isbn', $isbn)->first();
-        return view('livros.show', ['livro_escolhido' => $livro]); 
+        return view('livros.show', ['livro' => $livro]); 
     }
 
     /**
@@ -53,7 +51,7 @@ class LivroController extends Controller
      */
     public function edit(Livro $livro)
     {
-        //
+        return view('livros.edit', ['livro' => $livro]);
     }
 
     /**
@@ -61,7 +59,11 @@ class LivroController extends Controller
      */
     public function update(UpdateLivroRequest $request, Livro $livro)
     {
-        //
+        $livro->titulo = $request->titulo;
+        $livro->autor  = $request->autor;
+        $livro->isbn   = $request->isbn;
+        $livro->save();
+        return redirect("/livros");
     }
 
     /**
@@ -69,6 +71,7 @@ class LivroController extends Controller
      */
     public function destroy(Livro $livro)
     {
-        //
+        $livro->delete();
+        return redirect('/livros');
     }
 }

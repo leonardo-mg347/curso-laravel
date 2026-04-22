@@ -1,8 +1,7 @@
 @extends('main')
-
 @section('content')
 
-@forelse($livros_catalogados as $livro_escolhido)
+@forelse($livros_catalogados as $livro)
 @include('livros.partials.fields')
 <br>
 @empty
