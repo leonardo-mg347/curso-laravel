@@ -14,7 +14,7 @@ class LivroSeeder extends Seeder
     public function run(): void
     {
         $livro = [
-            'título' => "Quincas Borba",
+            'titulo' => "Quincas Borba",
             'autor'  => "Machado de Assis",
             'isbn'   => "9780195106817"
         ];

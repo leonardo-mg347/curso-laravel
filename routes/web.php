@@ -1,13 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\livroController;
+use App\Http\Controllers\LivroController;
 use App\Http\Controllers\LivroFulanoController;
 
 
-Route::get('/livros', [livroController::class, 'index']);
-
-Route::get('/livros/{isbn}', [livroController::class, 'show']);
+Route::resource('/livros', LivroController::class);
 
 Route::get('/livros_leonardo', [LivroFulanoController::class, 'index']);
 
