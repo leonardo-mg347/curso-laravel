@@ -22,7 +22,7 @@ class LivroLeoController extends Controller
      */
     public function create()
     {
-        //
+        return view('livrosleo.create',[ 'livro' => new LivroLeo]);
     }
 
     /**
@@ -30,38 +30,48 @@ class LivroLeoController extends Controller
      */
     public function store(StoreLivroLeoRequest $request)
     {
-        //
+        $livro = new LivroLeo;
+        $livro->titulo = $request->titulo;
+        $livro->autor  = $request->autor;
+        $livro->isbn   = $request->isbn;
+        $livro->save();
+        return redirect('/livrosleo');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(LivroLeo $livroLeo)
+    public function show(LivroLeo $livrosleo)
     {
-        //
+        return view('livrosleo.show', ['livro' => $livrosleo]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(LivroLeo $livroLeo)
+    public function edit(LivroLeo $livrosleo)
     {
-        //
+        return view('livrosleo.edit', ['livro' => $livrosleo]);
     }
-
+    
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateLivroLeoRequest $request, LivroLeo $livroLeo)
+    public function update(UpdateLivroLeoRequest $request, LivroLeo $livrosleo)
     {
-        //
+        $livrosleo->titulo = $request->titulo;
+        $livrosleo->autor  = $request->autor;
+        $livrosleo->isbn   = $request->isbn;
+        $livrosleo->save();
+        return redirect('/livrosleo');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(LivroLeo $livroLeo)
+    public function destroy(LivroLeo $livrosleo)
     {
-        //
+        $livrosleo->delete();
+        return redirect('/livrosleo');
     }
 }
