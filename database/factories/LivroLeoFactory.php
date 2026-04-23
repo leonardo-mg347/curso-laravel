@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Models\LivroFulano;
+use App\Models\LivroLeo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends Factory<LivroFulano>
+ * @extends Factory<LivroLeo>
  */
-class LivroFulanoFactory extends Factory
+class LivroLeoFactory extends Factory
 {
     /**
      * Define the model's default state.
