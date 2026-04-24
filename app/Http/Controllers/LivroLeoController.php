@@ -31,6 +31,7 @@ class LivroLeoController extends Controller
     public function store(StoreLivroLeoRequest $request)
     {
         $livro = LivroLeo::create($request->validated());
+        $request->session()->flash('alert-success', 'Livro cadastrado com sucesso');
         return redirect('/livrosleo');
     }
 
