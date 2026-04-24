@@ -30,11 +30,7 @@ class LivroController extends Controller
      */
     public function store(StoreLivroRequest $request)
     {
-        $livro = new Livro;
-        $livro->titulo = $request->titulo;
-        $livro->autor  = $request->autor;
-        $livro->isbn   = $request->isbn;
-        $livro->save();
+        $livro = Livro::create($request->validated());
         return redirect("/livros");
     }
 
@@ -59,10 +55,8 @@ class LivroController extends Controller
      */
     public function update(UpdateLivroRequest $request, Livro $livro)
     {
-        $livro->titulo = $request->titulo;
-        $livro->autor  = $request->autor;
-        $livro->isbn   = $request->isbn;
-        $livro->save();
+        $livro->update($request->validated());
+        $request->session()->flash('alert-info','Livro atualizado com sucesso');
         return redirect("/livros");
     }
 

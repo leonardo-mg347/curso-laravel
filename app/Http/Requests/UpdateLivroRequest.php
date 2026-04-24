@@ -22,8 +22,10 @@ class UpdateLivroRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
+        return[
+            'titulo' => 'required',
+            'autor' => 'required',
+            'isbn' => 'required|integer'
         ];
     }
 }

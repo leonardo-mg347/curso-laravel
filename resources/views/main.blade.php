@@ -1,5 +1,41 @@
 @extends('laravel-usp-theme::master')
 
 @section('javascripts_bottom')   
-    <script type="text/javascript" src="{{ asset('js/livro.js') }}"></script>
+    <!-- <script type="text/javascript" src="{{ asset('js/livro.js') }}"></script> -->
+@endsection
+
+@section('styles')
+    <style>
+        input{
+            display:block;
+        }
+    </style>
+@endsection
+
+@section('content')
+        <button type="submit"><a href="/livros/create">Cadastrar</a></button>
+@endsection
+
+@section('flash')
+
+<div class="flash-message">
+    @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+    @if(Session::has('alert-' . $msg))
+    <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }}
+        <a href="#" class="close" data-dismiss="alert" aria-label="fechar">&times;</a>
+    </p>
+    @endif
+    @endforeach
+</div>
+
+@if($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
 @endsection
