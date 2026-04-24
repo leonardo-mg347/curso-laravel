@@ -9,5 +9,6 @@ class LivroLeo extends Model
 {
     /** @use HasFactory<\Database\Factories\LivroLeoFactory> */
     protected $table = 'livros_leo';
+    protected $guarded = ['id'];
     use HasFactory;
 }

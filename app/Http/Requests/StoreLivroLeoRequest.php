@@ -23,7 +23,24 @@ class StoreLivroLeoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'titulo' => 'required',
+            'autor'  => 'nullable', 
+            'isbn'   => 'required|unique:livros_leo,isbn'
         ];
+    }
+
+    public function messages()
+    {   return[
+            'isbn.unique' => 'Já tem esse livro aqui sabichão!!!',
+            'titulo.required'=> 'Digite um titulo',
+            'isbn.required'=> 'Digite um isbn'
+    ];
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'isbn' => preg_replace('/[^0-9]/', '', $this->isbn),
+        ]);
     }
 }

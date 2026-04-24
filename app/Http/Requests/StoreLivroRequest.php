@@ -25,7 +25,7 @@ class StoreLivroRequest extends FormRequest
         return [
             'titulo' => 'required',
             'autor' => 'required',
-            'isbn' => 'required|integer|unique:livros, isbn'
+            'isbn' => 'required|integer|unique:livros,isbn'
         ];
     }
 

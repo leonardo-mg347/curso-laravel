@@ -25,7 +25,7 @@ class UpdateLivroRequest extends FormRequest
         return[
             'titulo' => 'required',
             'autor' => 'required',
-            'isbn' => 'required|integer'
+            'isbn' => 'required'
         ];
     }
 }

@@ -7,3 +7,6 @@
     @include('livrosleo.partials.form')
 </form>
 @endsection
+@section('flash')
+@parent
+@endsection
