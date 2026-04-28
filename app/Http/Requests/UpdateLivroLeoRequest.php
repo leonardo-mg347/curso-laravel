@@ -22,17 +22,20 @@ class UpdateLivroLeoRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = $this->route('livrosleo')->id;
         return [
             'titulo' => 'required',
             'autor'  => 'required', 
-            'isbn'   => 'required|unique:livros_leo,isbn'
+            'isbn'   => 'required|unique:livros_leo,isbn,' . $id 
         ];
     }
 
     public function messages()
     {   return[
             'titulo.required'=> 'Digite um titulo',
-            'isbn.required'=> 'Digite um isbn'
+            'autor.required' => 'Digite um autor',
+            'isbn.required'  => 'Digite um isbn',
+            'isbn.unique'    => 'Já existe um livro com este isbn'
     ];
     }
 

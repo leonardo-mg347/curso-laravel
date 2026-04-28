@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Upsdev\Replicado\Pessoa;
 
 /**
  * @extends Factory<User>
@@ -24,12 +25,15 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        dd($this->faker->unique()->servidor);
+        $codpes = $this->faker->unique()->servidor;
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'codpes'            => $codpes,
+            'name'              => Pessoa::_obterNome($codpes),
+            'email'             => Pessoa::_email($codpes),
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
+            'password'          => static::$password ??= Hash::make('password'),
+            'remember_token'    => Str::random(10),
         ];
     }
 
