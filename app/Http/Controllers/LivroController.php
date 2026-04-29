@@ -55,7 +55,6 @@ class LivroController extends Controller
      */
     public function update(UpdateLivroRequest $request, Livro $livro)
     {
-        dd($request->validated());
         $livro->update($request->validated());
         $request->session()->flash('alert-info','Livro atualizado com sucesso');
         return redirect("/livros");

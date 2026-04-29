@@ -25,19 +25,27 @@ $admin = [
 
 $submenu2 = [
     [
-        'text' => 'SubItem 1',
-        'url' => 'subitem1',
+        'text' => 'Cadastrar',
+        'url' => 'livros/create',
     ],
     [
         'text' => 'SubItem 2',
         'url' => 'subitem2',
         'can' => 'admin',
     ],
+    [
+        'text' => 'Cadastrar Fulano',
+        'url' => 'livrosleo/create',
+    ],
 ];
 
 $menu = [
     [
         'text' => '<i class="fas fa-home"></i> Home',
+        'url' => 'livros',
+    ],
+    [
+        'text' => 'Fulano',
         'url' => 'livrosleo',
     ],
     [

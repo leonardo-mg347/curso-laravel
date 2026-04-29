@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-        <button type="submit"><a href="/livros/create">Cadastrar</a></button>
+<!-- vazia -->
 @endsection
 
 @section('flash')

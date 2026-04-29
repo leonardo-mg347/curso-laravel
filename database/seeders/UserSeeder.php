@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'codpes'  => '1234567',
             'email'   => 'qualquer@usp.br',
             'name'    => 'Fulano da Silva',
-            'password'=> '1654465485' 
+            'password'=> 'password' 
         ];
         User::create($user_exemplo); 
         User::factory(30)->create();
