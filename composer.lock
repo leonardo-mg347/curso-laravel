@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e776071337ae93b105ed7286de638ef8",
+    "content-hash": "9eb420defb0aa782b308d51a5af2e9be",
     "packages": [
         {
             "name": "brick/math",
@@ -5998,100 +5998,6 @@
                 "source": "https://github.com/uspdev/cadastros-auxiliares-client/tree/1.0.3"
             },
             "time": "2026-04-02T19:55:48+00:00"
-        },
-        {
-            "name": "uspdev/laravel-replicado",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/uspdev/laravel-replicado.git",
-                "reference": "123f20faee303c8e4286447786d561bad1acc15b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/uspdev/laravel-replicado/zipball/123f20faee303c8e4286447786d561bad1acc15b",
-                "reference": "123f20faee303c8e4286447786d561bad1acc15b",
-                "shasum": ""
-            },
-            "require": {
-                "uspdev/replicado": "*"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Uspdev\\LaravelReplicado\\ReplicadoServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Uspdev\\LaravelReplicado\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "mit"
-            ],
-            "authors": [
-                {
-                    "name": "Masaki Kawabata Neto",
-                    "email": "kawabata@usp.br"
-                }
-            ],
-            "description": "Wrapper laravel para uspdev/replicado",
-            "support": {
-                "issues": "https://github.com/uspdev/laravel-replicado/issues",
-                "source": "https://github.com/uspdev/laravel-replicado/tree/1.1.0"
-            },
-            "time": "2026-03-24T10:51:44+00:00"
-        },
-        {
-            "name": "uspdev/laravel-usp-faker",
-            "version": "1.0.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/uspdev/laravel-usp-faker.git",
-                "reference": "3c2f3d656a35b7664aa87ded0566bfc4970c7638"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/uspdev/laravel-usp-faker/zipball/3c2f3d656a35b7664aa87ded0566bfc4970c7638",
-                "reference": "3c2f3d656a35b7664aa87ded0566bfc4970c7638",
-                "shasum": ""
-            },
-            "require": {
-                "uspdev/replicado": "^1.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Uspdev\\UspdevFakerServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Uspdev\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Thiago Gomes Veríssimo",
-                    "email": "verissimotgv@gmail.com"
-                }
-            ],
-            "description": "Uma biblioteca para geração de faker no contexto USP",
-            "support": {
-                "issues": "https://github.com/uspdev/laravel-usp-faker/issues",
-                "source": "https://github.com/uspdev/laravel-usp-faker/tree/1.0.7"
-            },
-            "time": "2023-06-26T12:37:38+00:00"
         },
         {
             "name": "uspdev/laravel-usp-theme",

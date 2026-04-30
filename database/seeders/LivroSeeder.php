@@ -19,6 +19,6 @@ class LivroSeeder extends Seeder
             'isbn'   => "9780195106817"
         ];
         Livro::create($livro);
-        Livro::factory(150)->create();
+        Livro::factory(50)->create();
     }
 }
