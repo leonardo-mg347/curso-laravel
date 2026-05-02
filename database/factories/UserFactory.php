@@ -4,9 +4,7 @@ namespace Database\Factories;
 
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use Uspdev\Replicado\Pessoa;
 
 /**
  * @extends Factory<User>
@@ -38,7 +36,7 @@ class UserFactory extends Factory
             'name'              => $this->faker->firstName() . ' ' . $this->faker->lastName(),
             'email'             => $this->faker->freeEmail(),                                 
             'email_verified_at' => now(),                                                     
-            'password'          => $this->faker->password($minLength = 6, $maxLength = 15),   
+            'password'          => $this->faker->password(),   
             'remember_token'    => Str::random(10),                                           
         ];
     }
