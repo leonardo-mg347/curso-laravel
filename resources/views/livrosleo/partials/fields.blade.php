@@ -4,12 +4,13 @@
         <li>{{ $livro->autor ?? 'nada'}}</li>
         <li>{{ $livro->isbn ?? 'nada'}}</li>
         <li><a href="/livrosleo/{{ $livro->id }}/edit">Editar</a></li>
+        <li>Cadastrado por: {{ $livro->user->name ?? '' }}</li>
         <li>
         <form method="post" action="/livrosleo/{{ $livro->id }}">
             @csrf
             @method('delete')
             <button type="submit" onclick="return confirm('Você tem certeza que quer excluir esse livro dos regitros?');">Apagar</button>
-    </form>
+        </form>
         </li>
     </ul>
 </div>  

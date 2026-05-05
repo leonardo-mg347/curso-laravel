@@ -4,6 +4,7 @@
         <li>{{ $livro->autor ?? 'nada'}}</li>
         <li>{{ $livro->isbn ?? 'nada'}}</li>
         <li><a href="/livros/{{ $livro->id }}/edit">Editar</a></li>
+        <li> Cadastrado por: {{ $livro->user->name ?? '' }}</li>
         <li>
         <form method="post" action="/livros/{{ $livro->id }}">
             @csrf

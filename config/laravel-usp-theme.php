@@ -42,10 +42,14 @@ $submenu2 = [
 $menu = [
     [
         'text' => '<i class="fas fa-home"></i> Home',
+        'url' => '',
+    ],
+    [
+        'text' => 'Acervo',
         'url' => 'livros',
     ],
     [
-        'text' => 'Fulano',
+        'text' => 'AcervoFulano',
         'url' => 'livrosleo',
     ],
     [

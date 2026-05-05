@@ -22,6 +22,5 @@ class UserSeeder extends Seeder
             'password'=> 'password' 
         ];
         User::create($user_exemplo); 
-        User::factory(30)->create();
     }
 }

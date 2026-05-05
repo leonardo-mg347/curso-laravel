@@ -30,7 +30,10 @@ class LivroLeoController extends Controller
      */
     public function store(StoreLivroLeoRequest $request)
     {
-        $livro = LivroLeo::create($request->validated());
+        $validated = $request->validated();
+        $validated['user_id'] = auth()->user()->id;
+
+        $livro = LivroLeo::create($validated);
         $request->session()->flash('alert-success', 'Livro cadastrado com sucesso');
         return redirect('/livrosleo');
     }
@@ -56,7 +59,10 @@ class LivroLeoController extends Controller
      */
     public function update(UpdateLivroLeoRequest $request, LivroLeo $livrosleo)
     {
-        $livrosleo->update($request->validated());
+        $validated = $request->validated();
+        $validated['user_id'] = auth()->user()->id;
+
+        $livrosleo->update($validated);
         $request->session()->flash('alert-info', 'Livro atualizado com sucesso.');
         return redirect('/livrosleo');
     }
@@ -67,6 +73,7 @@ class LivroLeoController extends Controller
     public function destroy(LivroLeo $livrosleo)
     {
         $livrosleo->delete();
+        session()->flash('alert-danger', 'Livro removido.');
         return redirect('/livrosleo');
     }
 }

@@ -26,8 +26,8 @@ class UpdateLivroLeoRequest extends FormRequest
         return [
             'titulo' => 'required',
             'autor'  => 'required', 
-            'isbn'   => 'required|unique:livros_leo,isbn,' . $id 
-        ];
+            'isbn'   => 'required|unique:livros_leo,isbn,' . $id
+            ];
     }
 
     public function messages()

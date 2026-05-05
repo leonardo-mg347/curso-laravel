@@ -30,8 +30,12 @@ class LivroController extends Controller
      */
     public function store(StoreLivroRequest $request)
     {
-        $livro = Livro::create($request->validated());
-        return redirect("/livros");
+        $validated = $request->validated();
+        $validated['user_id'] = auth()->user()->id;
+
+        $livro = Livro::create($validated);
+        $request->session()->flash('alert-success','Livro cadastrado com sucesso.');
+        return redirect("/livros/$livro->id");
     }
 
     /**
@@ -55,9 +59,12 @@ class LivroController extends Controller
      */
     public function update(UpdateLivroRequest $request, Livro $livro)
     {
-        $livro->update($request->validated());
-        $request->session()->flash('alert-info','Livro atualizado com sucesso');
-        return redirect("/livros");
+        $validated = $request->validated();
+        $validated['user_id'] = auth()->user()->id;
+
+        $livro->update($validated);
+        $request->session()->flash('alert-info','Livro atualizado com sucesso.');
+        return redirect("/livros/$livro->id" );
     }
 
     /**
@@ -66,6 +73,7 @@ class LivroController extends Controller
     public function destroy(Livro $livro)
     {
         $livro->delete();
+        session()->flash('alert-danger', 'Livro removido com sucesso.');
         return redirect('/livros');
     }
 }
